@@ -29,7 +29,7 @@ log.debug(f"Cloning {repository_url}.")
 repository = git.clone(repository_url, depth=1)
 
 log.debug("Installing dependencies.")
-shell.run("bundle version || gem install bundler".split(), cwd=repository)
+shell.run("gem install bundler".split(), cwd=repository)
 shell.run("bundle install".split(), cwd=repository)
 
 log.debug("Generating all libraries.")
