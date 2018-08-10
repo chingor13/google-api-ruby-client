@@ -487,7 +487,7 @@ module Google
       # if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) `
       # return nil;
       # `
-      # Color* result = [Color alloc] init];
+      # Color* result = [[Color alloc] init];
       # [result setRed:red];
       # [result setGreen:green];
       # [result setBlue:blue];
@@ -635,7 +635,7 @@ module Google
         # if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) `
         # return nil;
         # `
-        # Color* result = [Color alloc] init];
+        # Color* result = [[Color alloc] init];
         # [result setRed:red];
         # [result setGreen:green];
         # [result setBlue:blue];
@@ -1474,7 +1474,7 @@ module Google
         # if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) `
         # return nil;
         # `
-        # Color* result = [Color alloc] init];
+        # Color* result = [[Color alloc] init];
         # [result setRed:red];
         # [result setGreen:green];
         # [result setBlue:blue];

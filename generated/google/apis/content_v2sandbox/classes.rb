@@ -370,7 +370,8 @@ module Google
         # @return [String]
         attr_accessor :recipient_name
       
-        # Top-level administrative subdivision of the country (e.g. "CA").
+        # Top-level administrative subdivision of the country. For example, a state like
+        # California ("CA") or a province like Quebec ("QC").
         # Corresponds to the JSON property `region`
         # @return [String]
         attr_accessor :region
@@ -1719,9 +1720,7 @@ module Google
       class OrdersCancelLineItemRequest
         include Google::Apis::Core::Hashable
       
-        # Amount to refund for the cancelation. Optional. If not set, Google will
-        # calculate the default based on the price and tax of the items involved. The
-        # amount must not be larger than the net amount left on the order.
+        # Deprecated. Please use amountPretax and amountTax instead.
         # Corresponds to the JSON property `amount`
         # @return [Google::Apis::ContentV2sandbox::Price]
         attr_accessor :amount
@@ -1874,6 +1873,16 @@ module Google
       class OrdersCreateTestOrderRequest
         include Google::Apis::Core::Hashable
       
+        # The  CLDR territory code of the country of the test order to create. Affects
+        # the currency and addresses of orders created via template_name, or the
+        # addresses of orders created via test_order.
+        # Acceptable values are:
+        # - "US"
+        # - "FR"  Defaults to US.
+        # Corresponds to the JSON property `country`
+        # @return [String]
+        attr_accessor :country
+      
         # The test order template to use. Specify as an alternative to testOrder as a
         # shortcut for retrieving a template and then creating an order using that
         # template.
@@ -1892,6 +1901,7 @@ module Google
       
         # Update properties of this object
         def update!(**args)
+          @country = args[:country] if args.key?(:country)
           @template_name = args[:template_name] if args.key?(:template_name)
           @test_order = args[:test_order] if args.key?(:test_order)
         end
@@ -2088,9 +2098,7 @@ module Google
       class OrdersCustomBatchRequestEntryCancelLineItem
         include Google::Apis::Core::Hashable
       
-        # Amount to refund for the cancelation. Optional. If not set, Google will
-        # calculate the default based on the price and tax of the items involved. The
-        # amount must not be larger than the net amount left on the order.
+        # Deprecated. Please use amountPretax and amountTax instead.
         # Corresponds to the JSON property `amount`
         # @return [Google::Apis::ContentV2sandbox::Price]
         attr_accessor :amount
@@ -2210,7 +2218,7 @@ module Google
       class OrdersCustomBatchRequestEntryRefund
         include Google::Apis::Core::Hashable
       
-        # The amount that is refunded.
+        # Deprecated. Please use amountPretax and amountTax instead.
         # Corresponds to the JSON property `amount`
         # @return [Google::Apis::ContentV2sandbox::Price]
         attr_accessor :amount
@@ -2639,8 +2647,9 @@ module Google
         # @return [Google::Apis::ContentV2sandbox::Errors]
         attr_accessor :errors
       
-        # The status of the execution. Only defined if the method is not get or
-        # getByMerchantOrderId and if the request was successful.
+        # The status of the execution. Only defined if
+        # - the request was successful; and
+        # - the method is not get, getByMerchantOrderId, or one of the test methods.
         # Corresponds to the JSON property `executionStatus`
         # @return [String]
         attr_accessor :execution_status
@@ -2847,7 +2856,7 @@ module Google
       class OrdersRefundRequest
         include Google::Apis::Core::Hashable
       
-        # The amount that is refunded.
+        # Deprecated. Please use amountPretax and amountTax instead.
         # Corresponds to the JSON property `amount`
         # @return [Google::Apis::ContentV2sandbox::Price]
         attr_accessor :amount

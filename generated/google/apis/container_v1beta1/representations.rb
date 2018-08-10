@@ -106,42 +106,6 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
-      class GoogleIamV1Binding
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
-      class GoogleIamV1GetIamPolicyRequest
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
-      class GoogleIamV1Policy
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
-      class GoogleIamV1SetIamPolicyRequest
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
-      class GoogleIamV1TestIamPermissionsRequest
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
-      class GoogleIamV1TestIamPermissionsResponse
-        class Representation < Google::Apis::Core::JsonRepresentation; end
-      
-        include Google::Apis::Core::JsonObjectSupport
-      end
-      
       class HorizontalPodAutoscaling
         class Representation < Google::Apis::Core::JsonRepresentation; end
       
@@ -613,52 +577,6 @@ module Google
       class Empty
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
-        end
-      end
-      
-      class GoogleIamV1Binding
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-          collection :members, as: 'members'
-          property :role, as: 'role'
-        end
-      end
-      
-      class GoogleIamV1GetIamPolicyRequest
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-        end
-      end
-      
-      class GoogleIamV1Policy
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-          collection :bindings, as: 'bindings', class: Google::Apis::ContainerV1beta1::GoogleIamV1Binding, decorator: Google::Apis::ContainerV1beta1::GoogleIamV1Binding::Representation
-      
-          property :etag, :base64 => true, as: 'etag'
-          property :version, as: 'version'
-        end
-      end
-      
-      class GoogleIamV1SetIamPolicyRequest
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-          property :policy, as: 'policy', class: Google::Apis::ContainerV1beta1::GoogleIamV1Policy, decorator: Google::Apis::ContainerV1beta1::GoogleIamV1Policy::Representation
-      
-        end
-      end
-      
-      class GoogleIamV1TestIamPermissionsRequest
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-          collection :permissions, as: 'permissions'
-        end
-      end
-      
-      class GoogleIamV1TestIamPermissionsResponse
-        # @private
-        class Representation < Google::Apis::Core::JsonRepresentation
-          collection :permissions, as: 'permissions'
         end
       end
       

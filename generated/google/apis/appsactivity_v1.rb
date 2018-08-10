@@ -18,7 +18,7 @@ require 'google/apis/appsactivity_v1/representations.rb'
 
 module Google
   module Apis
-    # G Suite Activity API
+    # Drive Activity API
     #
     # Provides a historical view of activity.
     #

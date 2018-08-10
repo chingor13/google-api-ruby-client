@@ -409,6 +409,7 @@ module Google
         class Representation < Google::Apis::Core::JsonRepresentation
           property :artifact_manifest, as: 'artifactManifest'
           collection :build_step_images, as: 'buildStepImages'
+          collection :build_step_outputs, as: 'buildStepOutputs'
           collection :images, as: 'images', class: Google::Apis::CloudbuildV1::BuiltImage, decorator: Google::Apis::CloudbuildV1::BuiltImage::Representation
       
           property :num_artifacts, :numeric_string => true, as: 'numArtifacts'
