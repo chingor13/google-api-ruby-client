@@ -1060,8 +1060,7 @@ module Google
         end
         
         # Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-        # does not exist. The message payload must not be empty; it must contain
-        # either a non-empty data field, or at least one attribute.
+        # does not exist.
         # @param [String] topic
         #   The messages in the request will be published on this topic.
         #   Format is `projects/`project`/topics/`topic``.

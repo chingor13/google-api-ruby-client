@@ -2423,6 +2423,10 @@ module Google
         # When no InfoTypes or CustomInfoTypes are specified in a request, the
         # system may automatically choose what detectors to run. By default this may
         # be all types, but may change over time as detectors are updated.
+        # The special InfoType name "ALL_BASIC" can be used to trigger all detectors,
+        # but may change over time as new InfoTypes are added. If you need precise
+        # control and predictability as to what detectors are run you should specify
+        # specific InfoTypes listed in the reference.
         # Corresponds to the JSON property `infoTypes`
         # @return [Array<Google::Apis::DlpV2::GooglePrivacyDlpV2InfoType>]
         attr_accessor :info_types
@@ -4767,13 +4771,13 @@ module Google
         attr_accessor :enable_auto_population_of_timespan_config
         alias_method :enable_auto_population_of_timespan_config?, :enable_auto_population_of_timespan_config
       
-        # Exclude files newer than this value.
+        # Exclude files or rows newer than this value.
         # If set to zero, no upper time limit is applied.
         # Corresponds to the JSON property `endTime`
         # @return [String]
         attr_accessor :end_time
       
-        # Exclude files older than this value.
+        # Exclude files or rows older than this value.
         # Corresponds to the JSON property `startTime`
         # @return [String]
         attr_accessor :start_time
