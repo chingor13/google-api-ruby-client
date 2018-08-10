@@ -136,6 +136,12 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
+      class LogEntryOperation
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
       class MetricValue
         class Representation < Google::Apis::Core::JsonRepresentation; end
       
@@ -155,6 +161,12 @@ module Google
       end
       
       class Operation
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class Peer
         class Representation < Google::Apis::Core::JsonRepresentation; end
       
         include Google::Apis::Core::JsonObjectSupport
@@ -473,11 +485,23 @@ module Google
           property :insert_id, as: 'insertId'
           hash :labels, as: 'labels'
           property :name, as: 'name'
+          property :operation, as: 'operation', class: Google::Apis::ServicecontrolV1::LogEntryOperation, decorator: Google::Apis::ServicecontrolV1::LogEntryOperation::Representation
+      
           hash :proto_payload, as: 'protoPayload'
           property :severity, as: 'severity'
           hash :struct_payload, as: 'structPayload'
           property :text_payload, as: 'textPayload'
           property :timestamp, as: 'timestamp'
+        end
+      end
+      
+      class LogEntryOperation
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :first, as: 'first'
+          property :id, as: 'id'
+          property :last, as: 'last'
+          property :producer, as: 'producer'
         end
       end
       
@@ -536,6 +560,18 @@ module Google
       
           property :start_time, as: 'startTime'
           hash :user_labels, as: 'userLabels'
+        end
+      end
+      
+      class Peer
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :ip, as: 'ip'
+          hash :labels, as: 'labels'
+          property :port, :numeric_string => true, as: 'port'
+          property :principal, as: 'principal'
+          property :region_code, as: 'regionCode'
+          property :service, as: 'service'
         end
       end
       
@@ -663,6 +699,8 @@ module Google
           property :caller_ip, as: 'callerIp'
           property :caller_network, as: 'callerNetwork'
           property :caller_supplied_user_agent, as: 'callerSuppliedUserAgent'
+          property :destination_attributes, as: 'destinationAttributes', class: Google::Apis::ServicecontrolV1::Peer, decorator: Google::Apis::ServicecontrolV1::Peer::Representation
+      
           property :request_attributes, as: 'requestAttributes', class: Google::Apis::ServicecontrolV1::Request, decorator: Google::Apis::ServicecontrolV1::Request::Representation
       
         end

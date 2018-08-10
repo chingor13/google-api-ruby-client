@@ -906,6 +906,12 @@ module Google
         # @return [String]
         attr_accessor :name
       
+        # Additional information about a potentially long-running operation with which
+        # a log entry is associated.
+        # Corresponds to the JSON property `operation`
+        # @return [Google::Apis::ServicecontrolV1::LogEntryOperation]
+        attr_accessor :operation
+      
         # The log entry payload, represented as a protocol buffer that is
         # expressed as a JSON object. The only accepted type currently is
         # AuditLog.
@@ -945,11 +951,55 @@ module Google
           @insert_id = args[:insert_id] if args.key?(:insert_id)
           @labels = args[:labels] if args.key?(:labels)
           @name = args[:name] if args.key?(:name)
+          @operation = args[:operation] if args.key?(:operation)
           @proto_payload = args[:proto_payload] if args.key?(:proto_payload)
           @severity = args[:severity] if args.key?(:severity)
           @struct_payload = args[:struct_payload] if args.key?(:struct_payload)
           @text_payload = args[:text_payload] if args.key?(:text_payload)
           @timestamp = args[:timestamp] if args.key?(:timestamp)
+        end
+      end
+      
+      # Additional information about a potentially long-running operation with which
+      # a log entry is associated.
+      class LogEntryOperation
+        include Google::Apis::Core::Hashable
+      
+        # Optional. Set this to True if this is the first log entry in the operation.
+        # Corresponds to the JSON property `first`
+        # @return [Boolean]
+        attr_accessor :first
+        alias_method :first?, :first
+      
+        # Optional. An arbitrary operation identifier. Log entries with the
+        # same identifier are assumed to be part of the same operation.
+        # Corresponds to the JSON property `id`
+        # @return [String]
+        attr_accessor :id
+      
+        # Optional. Set this to True if this is the last log entry in the operation.
+        # Corresponds to the JSON property `last`
+        # @return [Boolean]
+        attr_accessor :last
+        alias_method :last?, :last
+      
+        # Optional. An arbitrary producer identifier. The combination of
+        # `id` and `producer` must be globally unique.  Examples for `producer`:
+        # `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
+        # Corresponds to the JSON property `producer`
+        # @return [String]
+        attr_accessor :producer
+      
+        def initialize(**args)
+           update!(**args)
+        end
+      
+        # Update properties of this object
+        def update!(**args)
+          @first = args[:first] if args.key?(:first)
+          @id = args[:id] if args.key?(:id)
+          @last = args[:last] if args.key?(:last)
+          @producer = args[:producer] if args.key?(:producer)
         end
       end
       
@@ -1231,6 +1281,63 @@ module Google
           @resources = args[:resources] if args.key?(:resources)
           @start_time = args[:start_time] if args.key?(:start_time)
           @user_labels = args[:user_labels] if args.key?(:user_labels)
+        end
+      end
+      
+      # This message defines attributes for a node that handles a network request.
+      # The node can be either a service or an application that sends, forwards,
+      # or receives the request. Service peers should fill in the `service`,
+      # `principal`, and `labels` as appropriate.
+      class Peer
+        include Google::Apis::Core::Hashable
+      
+        # The IP address of the peer.
+        # Corresponds to the JSON property `ip`
+        # @return [String]
+        attr_accessor :ip
+      
+        # The labels associated with the peer.
+        # Corresponds to the JSON property `labels`
+        # @return [Hash<String,String>]
+        attr_accessor :labels
+      
+        # The network port of the peer.
+        # Corresponds to the JSON property `port`
+        # @return [Fixnum]
+        attr_accessor :port
+      
+        # The identity of this peer. Similar to `Request.auth.principal`, but
+        # relative to the peer instead of the request. For example, the
+        # idenity associated with a load balancer that forwared the request.
+        # Corresponds to the JSON property `principal`
+        # @return [String]
+        attr_accessor :principal
+      
+        # The CLDR country/region code associated with the above IP address.
+        # If the IP address is private, the `region_code` should reflect the
+        # physical location where this peer is running.
+        # Corresponds to the JSON property `regionCode`
+        # @return [String]
+        attr_accessor :region_code
+      
+        # The canonical service name of the peer.
+        # NOTE: different systems may have different service naming schemes.
+        # Corresponds to the JSON property `service`
+        # @return [String]
+        attr_accessor :service
+      
+        def initialize(**args)
+           update!(**args)
+        end
+      
+        # Update properties of this object
+        def update!(**args)
+          @ip = args[:ip] if args.key?(:ip)
+          @labels = args[:labels] if args.key?(:labels)
+          @port = args[:port] if args.key?(:port)
+          @principal = args[:principal] if args.key?(:principal)
+          @region_code = args[:region_code] if args.key?(:region_code)
+          @service = args[:service] if args.key?(:service)
         end
       end
       
@@ -1806,6 +1913,14 @@ module Google
         # @return [String]
         attr_accessor :caller_supplied_user_agent
       
+        # This message defines attributes for a node that handles a network request.
+        # The node can be either a service or an application that sends, forwards,
+        # or receives the request. Service peers should fill in the `service`,
+        # `principal`, and `labels` as appropriate.
+        # Corresponds to the JSON property `destinationAttributes`
+        # @return [Google::Apis::ServicecontrolV1::Peer]
+        attr_accessor :destination_attributes
+      
         # This message defines attributes for an HTTP request. If the actual
         # request is not an HTTP request, the runtime system should try to map
         # the actual request to an equivalent HTTP request.
@@ -1822,6 +1937,7 @@ module Google
           @caller_ip = args[:caller_ip] if args.key?(:caller_ip)
           @caller_network = args[:caller_network] if args.key?(:caller_network)
           @caller_supplied_user_agent = args[:caller_supplied_user_agent] if args.key?(:caller_supplied_user_agent)
+          @destination_attributes = args[:destination_attributes] if args.key?(:destination_attributes)
           @request_attributes = args[:request_attributes] if args.key?(:request_attributes)
         end
       end

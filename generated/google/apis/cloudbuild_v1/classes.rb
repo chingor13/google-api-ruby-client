@@ -119,7 +119,7 @@ module Google
         end
       end
       
-      # A build resource in the Container Builder API.
+      # A build resource in the Cloud Build API.
       # At a high level, a `Build` describes where to find source code, how to build
       # it (for example, the builder image to run on the source), and where to store
       # the built artifacts.
@@ -305,7 +305,7 @@ module Google
       class BuildOperationMetadata
         include Google::Apis::Core::Hashable
       
-        # A build resource in the Container Builder API.
+        # A build resource in the Cloud Build API.
         # At a high level, a `Build` describes where to find source code, how to build
         # it (for example, the builder image to run on the source), and where to store
         # the built artifacts.
@@ -523,7 +523,7 @@ module Google
       class BuildTrigger
         include Google::Apis::Core::Hashable
       
-        # A build resource in the Container Builder API.
+        # A build resource in the Cloud Build API.
         # At a high level, a `Build` describes where to find source code, how to build
         # it (for example, the builder image to run on the source), and where to store
         # the built artifacts.
@@ -952,6 +952,15 @@ module Google
         # @return [Array<String>]
         attr_accessor :build_step_images
       
+        # List of build step outputs, produced by builder images, in the order
+        # corresponding to build step indices.
+        # [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
+        # can produce this output by writing to `$BUILDER_OUTPUT/output`.
+        # Only the first 4KB of data is stored.
+        # Corresponds to the JSON property `buildStepOutputs`
+        # @return [Array<String>]
+        attr_accessor :build_step_outputs
+      
         # Container images that were built as a part of the build.
         # Corresponds to the JSON property `images`
         # @return [Array<Google::Apis::CloudbuildV1::BuiltImage>]
@@ -970,6 +979,7 @@ module Google
         def update!(**args)
           @artifact_manifest = args[:artifact_manifest] if args.key?(:artifact_manifest)
           @build_step_images = args[:build_step_images] if args.key?(:build_step_images)
+          @build_step_outputs = args[:build_step_outputs] if args.key?(:build_step_outputs)
           @images = args[:images] if args.key?(:images)
           @num_artifacts = args[:num_artifacts] if args.key?(:num_artifacts)
         end

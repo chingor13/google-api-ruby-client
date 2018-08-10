@@ -1734,7 +1734,7 @@ module Google
       class PermissionGrant
         include Google::Apis::Core::Hashable
       
-        # The android permission or group, e.g. android.permission.READ_CALENDAR or
+        # The Android permission or group, e.g. android.permission.READ_CALENDAR or
         # android.permission_group.CALENDAR.
         # Corresponds to the JSON property `permission`
         # @return [String]

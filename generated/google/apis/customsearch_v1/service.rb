@@ -188,9 +188,9 @@ module Google
           execute_or_queue_command(command, &block)
         end
         
-        # (Closed Beta API) Returns metadata about the search performed, metadata about
-        # the custom search engine used for the search, and the search results only for
-        # site-restrict cses.
+        # Returns metadata about the search performed, metadata about the custom search
+        # engine used for the search, and the search results. Uses a small set of url
+        # patterns.
         # @param [String] q
         #   Query
         # @param [String] c2coff
