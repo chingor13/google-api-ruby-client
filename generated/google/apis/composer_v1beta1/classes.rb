@@ -276,8 +276,9 @@ module Google
         attr_accessor :network
       
         # Optional. The set of Google API scopes to be made available on all
-        # node VMs. If `oauth_scopes` is empty, defaults to
-        # ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+        # node VMs. Defaults to
+        # ["https://www.googleapis.com/auth/cloud-platform"] and must be included in
+        # the list of specified scopes. Cannot be updated.
         # Corresponds to the JSON property `oauthScopes`
         # @return [Array<String>]
         attr_accessor :oauth_scopes

@@ -2918,6 +2918,7 @@ module Google
       class OrdersCreateTestOrderRequest
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
+          property :country, as: 'country'
           property :template_name, as: 'templateName'
           property :test_order, as: 'testOrder', class: Google::Apis::ContentV2::TestOrder, decorator: Google::Apis::ContentV2::TestOrder::Representation
       
@@ -3673,6 +3674,7 @@ module Google
           property :size_system, as: 'sizeSystem'
           property :size_type, as: 'sizeType'
           collection :sizes, as: 'sizes'
+          property :source, as: 'source'
           property :target_country, as: 'targetCountry'
           collection :taxes, as: 'taxes', class: Google::Apis::ContentV2::ProductTax, decorator: Google::Apis::ContentV2::ProductTax::Representation
       

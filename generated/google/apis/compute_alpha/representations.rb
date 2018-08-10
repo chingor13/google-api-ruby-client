@@ -1270,6 +1270,12 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
+      class InstanceGroupManagerStatus
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
       class InstanceGroupManagerUpdatePolicy
         class Representation < Google::Apis::Core::JsonRepresentation; end
       
@@ -1684,6 +1690,36 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
+      class InterconnectDiagnostics
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class InterconnectDiagnosticsArpEntry
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class InterconnectDiagnosticsLinkLacpStatus
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class InterconnectDiagnosticsLinkOpticalPower
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class InterconnectDiagnosticsLinkStatus
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
       class InterconnectList
         class Representation < Google::Apis::Core::JsonRepresentation; end
         
@@ -1738,8 +1774,38 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
+      class InterconnectsGetDiagnosticsResponse
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class InternalIpAddress
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
       class InternalIpOwner
         class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class IpAddressesList
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+        
+        class Warning
+          class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+          class Datum
+            class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+            include Google::Apis::Core::JsonObjectSupport
+          end
+        
+          include Google::Apis::Core::JsonObjectSupport
+        end
       
         include Google::Apis::Core::JsonObjectSupport
       end
@@ -2182,6 +2248,24 @@ module Google
         include Google::Apis::Core::JsonObjectSupport
       end
       
+      class NodeGroupsListNodes
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+        
+        class Warning
+          class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+          class Datum
+            class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+            include Google::Apis::Core::JsonObjectSupport
+          end
+        
+          include Google::Apis::Core::JsonObjectSupport
+        end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
       class NodeGroupsScopedList
         class Representation < Google::Apis::Core::JsonRepresentation; end
         
@@ -2538,6 +2622,18 @@ module Google
         
           include Google::Apis::Core::JsonObjectSupport
         end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class RegionDisksAddResourcePoliciesRequest
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class RegionDisksRemoveResourcePoliciesRequest
+        class Representation < Google::Apis::Core::JsonRepresentation; end
       
         include Google::Apis::Core::JsonObjectSupport
       end
@@ -3888,6 +3984,42 @@ module Google
       
       class UrlMapValidationResult
         class Representation < Google::Apis::Core::JsonRepresentation; end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class UrlMapsAggregatedList
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+        
+        class Warning
+          class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+          class Datum
+            class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+            include Google::Apis::Core::JsonObjectSupport
+          end
+        
+          include Google::Apis::Core::JsonObjectSupport
+        end
+      
+        include Google::Apis::Core::JsonObjectSupport
+      end
+      
+      class UrlMapsScopedList
+        class Representation < Google::Apis::Core::JsonRepresentation; end
+        
+        class Warning
+          class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+          class Datum
+            class Representation < Google::Apis::Core::JsonRepresentation; end
+          
+            include Google::Apis::Core::JsonObjectSupport
+          end
+        
+          include Google::Apis::Core::JsonObjectSupport
+        end
       
         include Google::Apis::Core::JsonObjectSupport
       end
@@ -6494,6 +6626,8 @@ module Google
           property :service_account, as: 'serviceAccount'
           property :stateful_policy, as: 'statefulPolicy', class: Google::Apis::ComputeAlpha::StatefulPolicy, decorator: Google::Apis::ComputeAlpha::StatefulPolicy::Representation
       
+          property :status, as: 'status', class: Google::Apis::ComputeAlpha::InstanceGroupManagerStatus, decorator: Google::Apis::ComputeAlpha::InstanceGroupManagerStatus::Representation
+      
           collection :target_pools, as: 'targetPools'
           property :target_size, as: 'targetSize'
           property :update_policy, as: 'updatePolicy', class: Google::Apis::ComputeAlpha::InstanceGroupManagerUpdatePolicy, decorator: Google::Apis::ComputeAlpha::InstanceGroupManagerUpdatePolicy::Representation
@@ -6600,6 +6734,13 @@ module Google
           property :deleting, as: 'deleting'
           property :recreating, as: 'recreating'
           property :restarting, as: 'restarting'
+        end
+      end
+      
+      class InstanceGroupManagerStatus
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :is_stable, as: 'isStable'
         end
       end
       
@@ -7311,6 +7452,58 @@ module Google
         end
       end
       
+      class InterconnectDiagnostics
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          collection :arp_caches, as: 'arpCaches', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsArpEntry, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsArpEntry::Representation
+      
+          collection :links, as: 'links', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkStatus, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkStatus::Representation
+      
+          property :mac_address, as: 'macAddress'
+        end
+      end
+      
+      class InterconnectDiagnosticsArpEntry
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :ip_address, as: 'ipAddress'
+          property :mac_address, as: 'macAddress'
+        end
+      end
+      
+      class InterconnectDiagnosticsLinkLacpStatus
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :google_system_id, as: 'googleSystemId'
+          property :neighbor_system_id, as: 'neighborSystemId'
+          property :state, as: 'state'
+        end
+      end
+      
+      class InterconnectDiagnosticsLinkOpticalPower
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :state, as: 'state'
+          property :value, as: 'value'
+        end
+      end
+      
+      class InterconnectDiagnosticsLinkStatus
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          collection :arp_caches, as: 'arpCaches', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsArpEntry, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsArpEntry::Representation
+      
+          property :circuit_id, as: 'circuitId'
+          property :google_demarc, as: 'googleDemarc'
+          property :lacp_status, as: 'lacpStatus', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkLacpStatus, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkLacpStatus::Representation
+      
+          property :receiving_optical_power, as: 'receivingOpticalPower', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkOpticalPower, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkOpticalPower::Representation
+      
+          property :transmitting_optical_power, as: 'transmittingOpticalPower', class: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkOpticalPower, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnosticsLinkOpticalPower::Representation
+      
+        end
+      end
+      
       class InterconnectList
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
@@ -7419,12 +7612,63 @@ module Google
         end
       end
       
+      class InterconnectsGetDiagnosticsResponse
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :result, as: 'result', class: Google::Apis::ComputeAlpha::InterconnectDiagnostics, decorator: Google::Apis::ComputeAlpha::InterconnectDiagnostics::Representation
+      
+        end
+      end
+      
+      class InternalIpAddress
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :cidr, as: 'cidr'
+          property :owner, as: 'owner'
+          property :purpose, as: 'purpose'
+          property :region, as: 'region'
+          property :type, as: 'type'
+        end
+      end
+      
       class InternalIpOwner
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
           property :ip_cidr_range, as: 'ipCidrRange'
           collection :owners, as: 'owners'
           property :system_owned, as: 'systemOwned'
+        end
+      end
+      
+      class IpAddressesList
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :id, as: 'id'
+          collection :items, as: 'items', class: Google::Apis::ComputeAlpha::InternalIpAddress, decorator: Google::Apis::ComputeAlpha::InternalIpAddress::Representation
+      
+          property :kind, as: 'kind'
+          property :next_page_token, as: 'nextPageToken'
+          property :self_link, as: 'selfLink'
+          property :warning, as: 'warning', class: Google::Apis::ComputeAlpha::IpAddressesList::Warning, decorator: Google::Apis::ComputeAlpha::IpAddressesList::Warning::Representation
+      
+        end
+        
+        class Warning
+          # @private
+          class Representation < Google::Apis::Core::JsonRepresentation
+            property :code, as: 'code'
+            collection :data, as: 'data', class: Google::Apis::ComputeAlpha::IpAddressesList::Warning::Datum, decorator: Google::Apis::ComputeAlpha::IpAddressesList::Warning::Datum::Representation
+        
+            property :message, as: 'message'
+          end
+          
+          class Datum
+            # @private
+            class Representation < Google::Apis::Core::JsonRepresentation
+              property :key, as: 'key'
+              property :value, as: 'value'
+            end
+          end
         end
       end
       
@@ -8105,6 +8349,7 @@ module Google
           collection :nodes, as: 'nodes', class: Google::Apis::ComputeAlpha::NodeGroupNode, decorator: Google::Apis::ComputeAlpha::NodeGroupNode::Representation
       
           property :self_link, as: 'selfLink'
+          property :size, as: 'size'
           property :status, as: 'status'
           property :zone, as: 'zone'
         end
@@ -8177,7 +8422,6 @@ module Google
       class NodeGroupNode
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
-          property :index, as: 'index'
           collection :instances, as: 'instances'
           property :name, as: 'name'
           property :node_type, as: 'nodeType'
@@ -8195,8 +8439,39 @@ module Google
       class NodeGroupsDeleteNodesRequest
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
-          collection :node_indexes, as: 'nodeIndexes'
           collection :nodes, as: 'nodes'
+        end
+      end
+      
+      class NodeGroupsListNodes
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :id, as: 'id'
+          collection :items, as: 'items', class: Google::Apis::ComputeAlpha::NodeGroupNode, decorator: Google::Apis::ComputeAlpha::NodeGroupNode::Representation
+      
+          property :kind, as: 'kind'
+          property :next_page_token, as: 'nextPageToken'
+          property :self_link, as: 'selfLink'
+          property :warning, as: 'warning', class: Google::Apis::ComputeAlpha::NodeGroupsListNodes::Warning, decorator: Google::Apis::ComputeAlpha::NodeGroupsListNodes::Warning::Representation
+      
+        end
+        
+        class Warning
+          # @private
+          class Representation < Google::Apis::Core::JsonRepresentation
+            property :code, as: 'code'
+            collection :data, as: 'data', class: Google::Apis::ComputeAlpha::NodeGroupsListNodes::Warning::Datum, decorator: Google::Apis::ComputeAlpha::NodeGroupsListNodes::Warning::Datum::Representation
+        
+            property :message, as: 'message'
+          end
+          
+          class Datum
+            # @private
+            class Representation < Google::Apis::Core::JsonRepresentation
+              property :key, as: 'key'
+              property :value, as: 'value'
+            end
+          end
         end
       end
       
@@ -8846,6 +9121,20 @@ module Google
         end
       end
       
+      class RegionDisksAddResourcePoliciesRequest
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          collection :resource_policies, as: 'resourcePolicies'
+        end
+      end
+      
+      class RegionDisksRemoveResourcePoliciesRequest
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          collection :resource_policies, as: 'resourcePolicies'
+        end
+      end
+      
       class RegionDisksResizeRequest
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
@@ -9300,6 +9589,7 @@ module Google
         class Representation < Google::Apis::Core::JsonRepresentation
           property :guest_flush, as: 'guestFlush'
           hash :labels, as: 'labels'
+          collection :storage_locations, as: 'storageLocations'
         end
       end
       
@@ -9324,7 +9614,6 @@ module Google
       class ResourcePolicyVmMaintenancePolicy
         # @private
         class Representation < Google::Apis::Core::JsonRepresentation
-          property :maintenance_environment, as: 'maintenanceEnvironment'
           property :maintenance_window, as: 'maintenanceWindow', class: Google::Apis::ComputeAlpha::ResourcePolicyVmMaintenancePolicyMaintenanceWindow, decorator: Google::Apis::ComputeAlpha::ResourcePolicyVmMaintenancePolicyMaintenanceWindow::Representation
       
         end
@@ -9588,7 +9877,7 @@ module Google
         class Representation < Google::Apis::Core::JsonRepresentation
           property :name, as: 'name'
           collection :secondary_ip_range_names, as: 'secondaryIpRangeNames'
-          collection :source_ip_ranges_to_nats, as: 'sourceIpRangesToNats'
+          collection :source_ip_ranges_to_nat, as: 'sourceIpRangesToNat'
         end
       end
       
@@ -10207,6 +10496,7 @@ module Google
           collection :secondary_ip_ranges, as: 'secondaryIpRanges', class: Google::Apis::ComputeAlpha::SubnetworkSecondaryRange, decorator: Google::Apis::ComputeAlpha::SubnetworkSecondaryRange::Representation
       
           property :self_link, as: 'selfLink'
+          property :state, as: 'state'
         end
       end
       
@@ -11190,6 +11480,66 @@ module Google
           collection :test_failures, as: 'testFailures', class: Google::Apis::ComputeAlpha::TestFailure, decorator: Google::Apis::ComputeAlpha::TestFailure::Representation
       
           property :test_passed, as: 'testPassed'
+        end
+      end
+      
+      class UrlMapsAggregatedList
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          property :id, as: 'id'
+          hash :items, as: 'items', class: Google::Apis::ComputeAlpha::UrlMapsScopedList, decorator: Google::Apis::ComputeAlpha::UrlMapsScopedList::Representation
+      
+          property :kind, as: 'kind'
+          property :next_page_token, as: 'nextPageToken'
+          property :self_link, as: 'selfLink'
+          property :warning, as: 'warning', class: Google::Apis::ComputeAlpha::UrlMapsAggregatedList::Warning, decorator: Google::Apis::ComputeAlpha::UrlMapsAggregatedList::Warning::Representation
+      
+        end
+        
+        class Warning
+          # @private
+          class Representation < Google::Apis::Core::JsonRepresentation
+            property :code, as: 'code'
+            collection :data, as: 'data', class: Google::Apis::ComputeAlpha::UrlMapsAggregatedList::Warning::Datum, decorator: Google::Apis::ComputeAlpha::UrlMapsAggregatedList::Warning::Datum::Representation
+        
+            property :message, as: 'message'
+          end
+          
+          class Datum
+            # @private
+            class Representation < Google::Apis::Core::JsonRepresentation
+              property :key, as: 'key'
+              property :value, as: 'value'
+            end
+          end
+        end
+      end
+      
+      class UrlMapsScopedList
+        # @private
+        class Representation < Google::Apis::Core::JsonRepresentation
+          collection :url_maps, as: 'UrlMaps', class: Google::Apis::ComputeAlpha::UrlMap, decorator: Google::Apis::ComputeAlpha::UrlMap::Representation
+      
+          property :warning, as: 'warning', class: Google::Apis::ComputeAlpha::UrlMapsScopedList::Warning, decorator: Google::Apis::ComputeAlpha::UrlMapsScopedList::Warning::Representation
+      
+        end
+        
+        class Warning
+          # @private
+          class Representation < Google::Apis::Core::JsonRepresentation
+            property :code, as: 'code'
+            collection :data, as: 'data', class: Google::Apis::ComputeAlpha::UrlMapsScopedList::Warning::Datum, decorator: Google::Apis::ComputeAlpha::UrlMapsScopedList::Warning::Datum::Representation
+        
+            property :message, as: 'message'
+          end
+          
+          class Datum
+            # @private
+            class Representation < Google::Apis::Core::JsonRepresentation
+              property :key, as: 'key'
+              property :value, as: 'value'
+            end
+          end
         end
       end
       
